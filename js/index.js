@@ -4,7 +4,7 @@
     const siteLogo = document.querySelector('.site-logo');
     const iconMenuOpen = document.querySelector('.menu-icon-open');
     const menuBody = document.querySelector('.menu-body');
-    const menuButtonClose = document.querySelector('.menu__button-close-wrapper');
+    const menuButtonClose = document.querySelector('.menu-button-close-wrapper');
     const menuItems = document.querySelectorAll('.header-nav-menu-list-item');
     
     // Burger menu

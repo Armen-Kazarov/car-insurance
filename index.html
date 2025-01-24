@@ -25,8 +25,8 @@
           <a href="./" class="site-logo menu__logo site-logo-burger">
             <img src="./images/icons/site-logo.svg" alt="site logo">
           </a>
-          <div class="menu__button-close-wrapper">
-            <span class="menu__button-close"></span>
+          <div class="menu-button-close-wrapper">
+            <span class="menu-button-close"></span>
           </div>
           <ul class="header-nav-menu-list menu-list flex-container">
             <li class="menu-list-item header-nav-menu-list-item">
@@ -59,6 +59,80 @@
       </div>
     </div>
   </header>
+  <main class="main">
+    <section class="section hero-section">
+      <div class="container">
+        <div class="section-hero-content-wrapper">
+          <h1 class="section-hero-title">
+            Strong<br/> car insurance
+          </h1>
+          <p class="section-hero-text">
+            The most reliable insurance company for insuring your cars.
+          </p>
+          <button type="button" class="btn request-call-btn">
+            Request call
+          </button>
+          <p class="section-hero-text-visible">
+            Request a call and we will call you back in a matter of minutes. Our consultant will answer 
+            all your questions and help you decide on the choice of product that is right for you.
+          </p>
+          <div class="lightbox js-lightbox">
+            <form name="registration_form" action="#" class="contacts-section-form popup-form">
+              <button type="button" class="popup-button" data-action="close-lightbox">
+                <img src="./images/popup/cross.svg" alt="a white cross">
+              </button>
+              <h2 class="popup-form-title">
+                Request call
+              </h2>
+              <label for="username-surname" class="visually-hidden">Your name and surname</label>
+              <input 
+                    id="username-surname"
+                    name="username-surname"       
+                    type="text"
+                    class="contacts-section-form-input"
+                    placeholder="Your name and surname"
+                    minlength="2"
+                    pattern="^[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]+\s[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]+$"
+                    required>
+              <label for="zip" class="visually-hidden">ZIP Code</label>
+              <input 
+                    id="zip"
+                    name="zip"
+                    type="number"
+                    length="5"
+                    required>
+              <label for="tel" class="visually-hidden">Your phone number</label>
+              <input 
+                    id="tel"
+                    name="tel"
+                    type="tel"
+                    class="contacts-section-form-input"
+                    placeholder="Your phone number"
+                    pattern="^\[0-9]{11}"
+                    required>
+              <label for="email" class="visually-hidden">Your email</label>
+              <input 
+                    id="email"
+                    name="email"
+                    class="contacts-section-form-input"
+                    type="email"
+                    placeholder="Your email"
+                    required>
+              <button type="submit" class="btn contacts-section-form-btn popup-form-btn">
+                Request call
+              </button>
+              <p class="contacts-section-form-text popup-form-text">
+                By clicking on the "Request a call" button, I agree to the
+                <a href="#" class="contacts-section-form-text-link privacy-policy-link">
+                  privacy policy
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="./js/index.js" defer></script>
 </body>
 </html>

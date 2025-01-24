@@ -11,14 +11,55 @@
   display: flex;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: #fff;
+  background: #57a4ff;
+  padding: 16px 22px;
+  border: solid 1px #012c7b;
+  border-radius: 22px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  transition-property: 
+    background,
+    color;
+  transition: 0.3s linear;
+}
+
+.btn:hover {
+  color: #012c7b;
+  background: #dee4f1;
+  transition-property: 
+    background,
+    color;
+  transition: 0.3s linear;
+}
+
 /* START header*/
+.header {
+  background-color: #dee4f1;
+}
+
 .header-navigation-wrapper {
   padding-top: 14px;
   padding-bottom: 14px;
   justify-content: space-between;
   align-items: center;
-  opacity: 1;
-  transition: opacity 0.3s ease;
 }
 
 .header-nav-menu-list {
@@ -75,6 +116,11 @@
 }
 
 .site-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 26px;
+  color: #57a4ff;
   display: none;
 }
 
@@ -135,7 +181,7 @@
   top: 0;
 }
 
-.menu__button-close-wrapper {
+.menu-button-close-wrapper {
   position: absolute;
   top: 16px;
   right: 8px;
@@ -143,7 +189,7 @@
   cursor: pointer;
 }
 
-.menu__button-close {
+.menu-button-close {
   display: block;
   width: 24px;
   height: 1px;
@@ -152,7 +198,7 @@
   transform: rotate(45deg);
 }
 
-.menu__button-close::after {
+.menu-button-close::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -162,19 +208,253 @@
   transform: rotate(-90deg);
 }
 /* end burger menu */
-
-
-
-
-
-
 /* FINISH header*/
 
+/* START hero section*/
+.hero-section {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/hero-section/background.jpg') center/cover no-repeat;
+  padding-bottom: 20px;
+}
+
+.section-hero-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.section-hero-title {
+  color: #57a4ff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 42px;
+}
+
+.section-hero-text,
+.section-hero-text-visible {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.section-hero-text-visible {
+  display: none;
+}
+/* FINISH hero section*/
+
+/* Lightbox popup */
+.lightbox {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(1, 31, 74, 0.40);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 200ms linear;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox .popup-form {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 144px;
+  transform: scale(0.9);
+  transition: transform 200ms ease-in-out;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 722px;
+  height: 100%;
+  max-height: 680px;
+  border-radius: 48px;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* hidden scrollbarIE и Edge */
+  scrollbar-width: none;  /* hidden scrollbar Firefox */
+}
+
+/* hidden scrollbar Chrome, Safari и Opera */
+.popup-form::-webkit-scrollbar {
+  display: none;
+}
+
+.popup-form-title {
+  color: var(--primary-main-color-lighter);
+  text-align: center;
+  font-family: Play;
+  font-size: 40px;
+  font-weight: var(--secondary-font-weight);
+  line-height: normal;
+  margin-bottom: 18px;
+}
+
+.popup-form-input {
+  margin-bottom: 24px;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.lightbox.is-open .popup-form {
+  transform: scale(1);
+}
+
+.popup-button {
+  position: absolute;
+  top: 42px;
+  right: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.popup-button:hover,
+.popup-button:focus {
+ border: 1px solid var(--primary-main-color-lighter);
+}
+
+/* FINISH Lightbox popup */
 
 
 @media (min-width: 768px) {
   .header-nav-menu-list {
     font-size: 32px;
     line-height: 32px;
+  }
+
+  .hero-section {
+    padding-bottom: 40px;
+  }
+
+  .section-hero-content-wrapper {
+    gap: 40px;
+  }
+
+  .section-hero-title {
+    font-size: 60px;
+    line-height: 68px;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .btn {
+    padding: 20px 30px;
+  }
+
+  .site-logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .site-logo-text {
+    display: block;
+  }
+
+  .menu-body {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    flex-direction: row;
+    overflow: visible;
+    transition: none;
+  }
+
+  .header-nav-menu-list {
+    padding-top: 0;
+    font-size: 16px;
+    line-height: 16px;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .menu-icon-open,
+  .site-logo-burger,
+  .menu-button-close-wrapper {
+    display: none;
+  }
+
+  .section-hero-content-wrapper {
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+    padding-top: 40px;
+  }
+
+  .section-hero-text {
+    font-size: 22px;
+  }
+
+  .section-hero-text-visible {
+    display: block;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 552px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .section-hero-title {
+    font-size: 76px;
+    line-height: 86px;
+  }
+
+  .section-hero-text {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .section-hero-text-visible {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 690px;
+  }
+
+  .request-call-btn {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-section {
+    background-position-y: 70%;
   }
 }
