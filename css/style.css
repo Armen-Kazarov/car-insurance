@@ -276,7 +276,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 42px 144px;
+  padding: 38px 32px;
   transform: scale(0.9);
   transition: transform 200ms ease-in-out;
   flex-wrap: wrap;
@@ -295,20 +295,41 @@
   display: none;
 }
 
+.popup-form .form-inputs-wrapper {
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.popup-form-btn {
+  padding: 18px 44px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .popup-form-title {
-  color: var(--primary-main-color-lighter);
+  color: #012c7b;
   text-align: center;
-  font-family: Play;
-  font-size: 40px;
-  font-weight: var(--secondary-font-weight);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
   line-height: normal;
   margin-bottom: 18px;
 }
 
-.popup-form-input {
-  margin-bottom: 24px;
-  padding-right: 32px;
-  padding-left: 32px;
+.popup-form-text {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 10px;
+  color: #110f0f;
+  text-align: center;
+}
+
+.privacy-policy-link {
+  color: #012c7b;
+  text-decoration: underline;
 }
 
 .lightbox.is-open .popup-form {
@@ -317,8 +338,8 @@
 
 .popup-button {
   position: absolute;
-  top: 42px;
-  right: 42px;
+  top: 18px;
+  right: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,6 +359,27 @@
 
 /* FINISH Lightbox popup */
 
+/*CONTACTS FORM*/
+.contacts-section-form {
+  background-color: #dee4f1;
+}
+
+.contacts-section-form-input {
+  padding: 10px 16px;
+  width: 100%;
+  color: #012c7b;
+  border-radius: 16px;
+  border: none;
+  border: 2px solid #012c7b;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.contacts-section-form-input::placeholder {
+  color: #012c7b;
+}
 
 @media (min-width: 768px) {
   .header-nav-menu-list {
@@ -358,7 +400,11 @@
     line-height: 68px;
   }
 
-
+  .lightbox .popup-form {
+    padding-left: 70px;
+    padding-right: 70px;
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -422,6 +468,19 @@
     font-size: 16px;
     line-height: 22px;
     max-width: 552px;
+  }
+
+  .popup-form .form-inputs-wrapper {
+    gap: 18px;
+  }
+
+  .popup-form .popup-form-btn {
+    padding: 18px 58px;
+  }
+
+  .contacts-section-form-input {
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
 
