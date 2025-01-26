@@ -90,18 +90,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const imgVisibilityWrapper = document.querySelector(".about-us-section-img-visibility-wrapper");
+
+    const options = {
+      threshold: 0.5
+    }
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         
         if (entry.isIntersecting) {
           imgVisibilityWrapper.classList.add("_show");
-        
-        } else {
-          imgVisibilityWrapper.classList.remove("_show");
         }
       });
-    });
+    }, options);
   
     observer.observe(document.querySelector(".about-us-section"));
   
