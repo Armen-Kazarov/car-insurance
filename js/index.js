@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let item of menuItems) {
       if (item) {
         item.addEventListener("click", function (e) {
-          document.body.classList.toggle('_lock');
+          document.body.classList.remove('_lock');
           iconMenuOpen.classList.toggle('_active');
           menuBody.classList.toggle('_active');
+          iconMenuOpen.classList.remove('_visible');
+          siteLogo.classList.remove('_visible');
         });
       }
     }
@@ -85,4 +87,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.location.href = '../temp-pages/tempPage1.html';
   });
+
+
+    const imgVisibilityWrapper = document.querySelector(".about-us-section-img-visibility-wrapper");
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        
+        if (entry.isIntersecting) {
+          imgVisibilityWrapper.classList.add("_show");
+        
+        } else {
+          imgVisibilityWrapper.classList.remove("_show");
+        }
+      });
+    });
+  
+    observer.observe(document.querySelector(".about-us-section"));
+  
 })

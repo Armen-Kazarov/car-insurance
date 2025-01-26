@@ -50,6 +50,14 @@
   transition: 0.3s linear;
 }
 
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 38px;
+  text-align: center;
+}
+
 /* START header*/
 .header {
   background-color: #dee4f1;
@@ -166,6 +174,7 @@
 
 .menu-body {
   position: fixed;
+  z-index: 10;
   top: 100%;
   left: 0;
   width: 100%;
@@ -179,6 +188,10 @@
 
 .menu-body._active {
   top: 0;
+}
+
+.site-logo-burger {
+  width: 32px;
 }
 
 .menu-button-close-wrapper {
@@ -352,12 +365,64 @@
   outline: none;
 }
 
-.popup-button:hover,
-.popup-button:focus {
- border: 1px solid var(--primary-main-color-lighter);
+/*START about us section*/
+.about-us-section {
+  background-color: #dee4f1;
+  padding-top: 40px;
+  padding-bottom: 160px;
+  position: relative;
 }
 
-/* FINISH Lightbox popup */
+.about-us-section-title {
+  margin-bottom: 20px;
+}
+
+.about-us-section-title span {
+  color: #57a4ff;
+}
+
+.about-us-section-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: justify;
+}
+
+.about-us-section-img-visibility-wrapper {
+  display: none;
+}
+
+.about-us-section-imgage-wrapper {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: -108px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 0px 23px -4px rgba(36, 36, 50, 1);
+  -moz-box-shadow: 0px 0px 23px -4px rgba(36, 36, 50, 1);
+  box-shadow: 0px 0px 23px -4px rgba(36, 36, 50, 1);
+}
+
+.about-us-section-main-image {
+  border-radius: 16px;
+}
+
+/*FINISH about us section*/
+
+
+/*START our products section*/
+.our-products-section {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  height: 600px;
+}
+
+
+/*FINISH our products section*/
+
+
+
 
 /*CONTACTS FORM*/
 .contacts-section-form {
@@ -381,7 +446,28 @@
   color: #012c7b;
 }
 
+@media (min-width: 425px) {
+  .about-us-section {
+    padding-bottom: 194px;
+  }
+}
+
+@media (min-width: 576px) {
+  .about-us-section {
+    padding-bottom: 270px;
+  }
+
+  .about-us-section-imgage-wrapper {
+    bottom: -160px;
+  }
+}
+
 @media (min-width: 768px) {
+  .section-title {
+    font-size: 44px;
+    line-height: 50px;
+  }
+
   .header-nav-menu-list {
     font-size: 32px;
     line-height: 32px;
@@ -404,6 +490,58 @@
     padding-left: 70px;
     padding-right: 70px;
     max-width: 600px;
+  }
+
+  .about-us-section {
+    padding-bottom: 230px;
+    overflow-y: visible;
+    overflow-x: clip;
+  }
+
+  .about-us-section-title {
+    text-align: left;
+  }
+
+  .about-us-section-imgage-wrapper {
+    max-width: 50%;
+    bottom: -38px;
+    -webkit-box-shadow: 0px 6px 9px -2px rgba(112, 112, 112, 1);
+    -moz-box-shadow: 0px 6px 9px -2px rgba(112, 112, 112, 1);
+    box-shadow: 0px 6px 9px -2px rgba(112, 112, 112, 1);
+  }
+
+  .about-us-section-img-visibility-wrapper {
+    position: absolute;
+    right: -160px;
+    width: 160px;
+    display: block;
+    border-radius: 50%;
+    transition: right 0.5s linear;
+    transition-delay: 1s;
+  }
+
+  .about-us-section-img-visibility-wrapper._show {
+    right: 20px;
+    bottom: 70px;
+  }
+
+  .about-us-section-image {
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-us-section {
+    padding-bottom: 300px;
+  }
+
+  .about-us-section-img-visibility-wrapper {
+    right: -240px;
+    width: 240px;
+  }
+
+  .about-us-section-img-visibility-wrapper._show {
+    bottom: 60px;
   }
 }
 
@@ -478,6 +616,25 @@
     padding: 18px 58px;
   }
 
+  .about-us-section {
+    padding-bottom: 350px;
+  }
+
+  .about-us-section-imgage-wrapper {
+    left: 50px;
+    bottom: -50px;
+  }
+
+  .about-us-section-img-visibility-wrapper._show {
+    right: 50px;
+  }
+
+
+
+
+
+
+
   .contacts-section-form-input {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -488,6 +645,11 @@
   .container {
     padding-left: 100px;
     padding-right: 100px;
+  }
+
+  .header-nav-menu-list {
+    font-size: 18px;
+    line-height: 18px; 
   }
 
   .section-hero-title {
@@ -509,6 +671,47 @@
 
   .request-call-btn {
     margin-top: 60px;
+  }
+
+  .about-us-section {
+    padding-bottom: 320px;
+  }
+
+  .about-us-section-img-visibility-wrapper {
+    width: 270px;
+    right: -270px;
+  }
+
+  .about-us-section-img-visibility-wrapper._show {
+    right: 100px;
+    bottom: 34px;
+  }
+
+  .about-us-section-imgage-wrapper {
+    max-width: 40%;
+    left: 100px;
+    bottom: -66px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-title {
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  .about-us-section {
+    padding-bottom: 400px;
+  }
+
+  .about-us-section-text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .about-us-section-img-visibility-wrapper {
+    width: 350px;
+    right: -350px;
   }
 }
 
