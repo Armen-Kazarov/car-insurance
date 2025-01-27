@@ -89,21 +89,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+    const aboutUsSection = document.querySelector(".about-us-section");
+    const specialOffersLinks = document.querySelectorAll(".special-offers-section-link");
     const imgVisibilityWrapper = document.querySelector(".about-us-section-img-visibility-wrapper");
 
     const options = {
-      threshold: 0.5
+      threshold: [0.8, 1.0]
     }
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         
-        if (entry.isIntersecting) {
-          imgVisibilityWrapper.classList.add("_show");
+        if (entry.target === aboutUsSection) {
+
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            imgVisibilityWrapper.classList.add("_show");
+          }
+        }
+
+        if (entry.isIntersecting && entry.intersectionRatio === 1) {
+
+          if (entry.target.classList.contains("special-offers-section-link")) {
+            const subtitle = entry.target.querySelector(".special-offers-section-link-subtitle");
+            const chevron = entry.target.querySelector(".special-offers-section-link-icon-chevron");
+
+            if (subtitle) {
+              subtitle.classList.add("_show-subtitle");
+            }
+
+            if (chevron) {
+              chevron.classList.add("_show-link-chevron");
+            } 
+          }
         }
       });
     }, options);
   
-    observer.observe(document.querySelector(".about-us-section"));
+    observer.observe(aboutUsSection);
+    specialOffersLinks.forEach((link) => observer.observe(link));
   
 })

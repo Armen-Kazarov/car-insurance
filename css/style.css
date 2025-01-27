@@ -561,18 +561,93 @@
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.special-offers-section-link:visited {
+  color: #fff;
+}
+
+.special-offers-section-link::after {
+  content: "Look in more detail";
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: linear-gradient(rgba(222, 228, 241 , 0.5), rgba(222, 228, 241 , 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
+  transition: top 0.3s linear;
+}
+
+.special-offers-section-link:hover.special-offers-section-link::after {
+  top: 0;
+  transition: top 0.3s linear;
+}
+
+.special-offers-section-link-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special-offers-section-link-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  transform: translateX(-110%);
+  transition: transform 0.5s linear;
+}
+
+.special-offers-section-link-subtitle._show-subtitle {
+  transform: translateX(0);
+  transition: transform 0.5s linear;
+}
+
+.special-offers-section-link-icon-chevron {
+  transform: translateX(30px);
+  transition: transform 0.5s linear;
+}
+
+.special-offers-section-link-icon-chevron._show-link-chevron {
+  transform: translateX(0);
+  transition: transform 0.5s linear;
 }
 
 .special-offers-section-link-regular-customers {
-  background: url('../images/special-offers-section/aarp-auto-insurance.jpg') center/cover no-repeat;
-  height: 300px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/special-offers-section/aarp-auto-insurance.jpg') center/cover no-repeat;
 }
 
-/* @supports (background-image: url("../images/special-offers-section/aarp-auto-insurance.webp")) {
+.special-offers-section-link-new-clients {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/special-offers-section/car_insurance.jpg') center/cover no-repeat;
+}
+
+@supports (background-image: url("../images/special-offers-section/aarp-auto-insurance.webp"), url("../images/special-offers-section/car_insurance.webp")) {
   .special-offers-section-link-regular-customers {
-    background-image: url('../images/special-offers-section/aarp-auto-insurance.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/special-offers-section/aarp-auto-insurance.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-} */
+
+  .special-offers-section-link-new-clients {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/special-offers-section/car_insurance.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
 
 /* FINISH special offers section*/
 
@@ -692,6 +767,10 @@
 
   .our-products-list {
     gap: 28px;
+  }
+
+  .special-offers-section-content-wrapper {
+    gap: 16px;
   }
 }
 
@@ -874,6 +953,19 @@
   .our-products-list-item-img-wrapper-width {
     padding-bottom: 10px;
   }
+
+  .special-offers-section {
+    padding-top: 32px;
+    padding-bottom: 70px;
+  }
+
+  .special-offers-section-content-wrapper {
+    gap: 38px;
+  }
+
+  .special-offers-section-link-new-clients {
+    background-position-y: 8%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -915,6 +1007,11 @@
     font-size: 18px;
     line-height: 26px;
   }
+
+  .special-offers-section-content-wrapper {
+    gap: 56px;
+    grid-auto-rows: 400px;
+  }
 }
 
 @media (min-width: 1700px) {
@@ -941,6 +1038,21 @@
   .our-products-list-item-sub-title {
     font-size: 28px;
     line-height: 32px;
+  }
+
+  .special-offers-section-content-wrapper {
+    gap: 86px;
+    grid-auto-rows: 500px;
+  }
+
+  .special-offers-section-link-subtitle {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  .special-offers-section-link::after {
+    font-size: 34px;
+    line-height: 34px;
   }
 }
 
