@@ -149,11 +149,19 @@
             We have special offers for both new customers and regular customers.
           </p>
           <div class="about-us-section-img-visibility-wrapper">
-            <img class="about-us-section-image" src="./images/about-us-section/partners.jpg" alt="Men shaking hands">
+            <picture>
+              <source class="about-us-section-image" srcset="./images/about-us-section/partners.webp" type="image/webp">
+              <source class="about-us-section-image" srcset="./images/about-us-section/partners.jpg" type="image/jpeg">
+              <img class="about-us-section-image" src="./images/about-us-section/partners.jpg" alt="Men shaking hands">
+            </picture>
           </div>
         </div>
         <div class="about-us-section-image-wrapper">
-          <img class="about-us-section-main-image" src="./images/about-us-section/insurance.jpg" alt="Man and woman near a car">
+          <picture>
+            <source class="about-us-section-main-image" srcset="./images/about-us-section/insurance.webp" type="image/webp">
+            <source class="about-us-section-main-image" srcset="./images/about-us-section/insurance.jpg" type="image/jpeg">
+            <img class="about-us-section-main-image" src="./images/about-us-section/insurance.jpg" alt="Man and woman near a car">
+          </picture>
         </div>
       </div>
     </section>
@@ -230,6 +238,29 @@
             </p>
           </li>
         </ul>
+      </div>
+    </section>
+    <section id="#special-offers" class="special-offers-section">
+      <div class="container">
+        <h2 class="special-offers-section section-title">
+          Special offers
+        </h2>
+        <div class="special-offers-section-content-wrapper">
+          <a href="./temp-pages/tempPage3.html" class="special-offers-section-link special-offers-section-link-regular-customers">
+            <h3 class="special-offers-section-link-subtitle">
+              Special offers for regular customers!
+            </h3>
+            <svg class="special-offers-section-link-icon-chevron" width="16" height="16">
+              <title>icon-chevron</title>
+              <use href="/images/special-offers-section/chevron-right.svg#chevron"></use>
+            </svg>
+          </a>
+          <a href="./temp-pages/tempPage4.html" class="special-offers-section-link special-offers-section-link new-clients">
+            <h3 class="special-offers-section-link-subtitle">
+              Special offers for new clients!
+            </h3>
+          </a>
+        </div>
       </div>
     </section>
   </main>
