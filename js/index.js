@@ -127,5 +127,36 @@ document.addEventListener("DOMContentLoaded", () => {
   
     observer.observe(aboutUsSection);
     specialOffersLinks.forEach((link) => observer.observe(link));
+
+
+    const btnNext = document.querySelector(".btn-slider-next");
+    const btnPrev = document.querySelector(".btn-slider-prev");
+    const sliders = document.querySelectorAll(".our-team-section-list > li");
+    const slidersList = document.querySelector(".our-team-section-list");
+
+    let currentSliderIndex = 0;
+    const slideWidth = 100;
+
+    const updateSliderPosition = () => {
+      slidersList.style.transform = `translateX(-${currentSliderIndex * slideWidth}%)`;
+    };
+    
+    const slideNextSwitchHandler = () => {
+      if (currentSliderIndex < sliders.length - 1) {
+        currentSliderIndex++;
+        updateSliderPosition();
+        
+      }
+    };
+
+    const slidePrevSwitchHandler = () => {
+      if (currentSliderIndex > 0) {
+        currentSliderIndex--;
+        updateSliderPosition();
+      }
+    };
+
+    btnNext.addEventListener("click", slideNextSwitchHandler);
+    btnPrev.addEventListener("click", slidePrevSwitchHandler);
   
 })

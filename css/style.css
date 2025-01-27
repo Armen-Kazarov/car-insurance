@@ -544,7 +544,7 @@
 .special-offers-section {
   background-color: #dee4f1;
   padding-top: 26px;
-  padding-bottom: 26px;
+  padding-bottom: 52px;
 }
 
 .special-offers-section-content-wrapper {
@@ -648,8 +648,112 @@
     background-repeat: no-repeat;
   }
 }
-
 /* FINISH special offers section*/
+
+/* START our team section */
+.our-team-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.our-team-section-title {
+  margin-bottom: 30px;
+}
+
+.our-team-section-title::after {
+  content: " ";
+  display: flex;
+  width: 96px;
+  height: 2px;
+  background-color: #012c7b;
+  justify-self: center;
+  margin-top: 10px;
+  margin-bottom: 42px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.our-team-section-list {
+  display: flex;
+  transition: transform 0.4s linear;
+}
+
+.our-team-section-list-item {
+  flex: 0 0 100%;
+  padding: 20px;
+  background: #dee4f1;
+}
+
+.our-team-section-list-item-img-wrapper {
+  max-width: 60%;
+  margin-bottom: 8px;
+}
+
+.our-team-section-list-item-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.our-team-section-list-item-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.our-team-section-list-item-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.slider-buttons-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+}
+
+.btn-slider-next,
+.btn-slider-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 50%;
+  border: solid 1px #012c7b;
+  padding: 4px; */
+  color: #012c7b;
+  /* background: #dee4f1; */
+  transition: color 0.3s linear;
+}
+
+.btn-slider-next:hover,
+.btn-slider-prev:hover {
+  /* background: #57a4ff; */
+  color: #57a4ff;
+  transition: color 0.3s linear;
+}
+
+.btn-slider-next {
+  transform: rotate(180deg);
+}
+
+/* FINISH our team section */
+
+
 
 
 /*CONTACTS FORM*/
@@ -787,6 +891,38 @@
   .about-us-section-img-visibility-wrapper._show {
     bottom: 60px;
   }
+
+  .slider {
+    position: static;
+    overflow: overlay;
+  }
+
+  .slider-wrapper {
+    overflow: overlay;
+  }
+
+  .our-team-section-list {
+    transform: translateX(0);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    transition: none;
+  }
+
+  .our-team-section-list-item {
+    display: grid;
+  }
+
+  .our-team-section-list-item, 
+  .our-team-section-list-item-img-wrapper,
+  .our-team-section-list-item-img {
+    border-radius: 20px;
+  }
+
+  .slider-buttons-wrapper {
+    display: none;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -966,6 +1102,10 @@
   .special-offers-section-link-new-clients {
     background-position-y: 8%;
   }
+
+  .switch-width {
+    max-width: 64%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -1053,6 +1193,20 @@
   .special-offers-section-link::after {
     font-size: 34px;
     line-height: 34px;
+  }
+
+  .our-team-section-list-item-title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .our-team-section-list-item-text {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .our-team-section-list {
+    gap: 44px;
   }
 }
 
