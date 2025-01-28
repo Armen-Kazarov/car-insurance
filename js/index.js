@@ -76,19 +76,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener('keydown', hideModalWithEsc);
 
   //form submit
-  const registrationForm = document.querySelector('.contacts-section-form');
+  const registrationForms = document.querySelectorAll('.contacts-section-form');
+
+  registrationForms.forEach((registrationForm) => {
+    registrationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
   
-  registrationForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const regFormData = new FormData(event.target);
-    const data = Object.fromEntries(regFormData.entries());
-    console.log(data);
-
-    window.location.href = '../temp-pages/tempPage1.html';
-  });
-
-
+      const regFormData = new FormData(event.target);
+      const data = Object.fromEntries(regFormData.entries());
+      console.log(data);
+  
+      window.location.href = '../temp-pages/tempPage1.html';
+    });
+  })
+  
     const aboutUsSection = document.querySelector(".about-us-section");
     const specialOffersLinks = document.querySelectorAll(".special-offers-section-link");
     const imgVisibilityWrapper = document.querySelector(".about-us-section-img-visibility-wrapper");
@@ -128,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(aboutUsSection);
     specialOffersLinks.forEach((link) => observer.observe(link));
 
-
     const btnNext = document.querySelector(".btn-slider-next");
     const btnPrev = document.querySelector(".btn-slider-prev");
     const sliders = document.querySelectorAll(".our-team-section-list > li");
@@ -158,5 +158,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnNext.addEventListener("click", slideNextSwitchHandler);
     btnPrev.addEventListener("click", slidePrevSwitchHandler);
-  
 })

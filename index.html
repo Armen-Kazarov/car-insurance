@@ -363,6 +363,72 @@
         </div>
       </div>
     </section>
+    <section id="contacts" class="contacts-section">
+      <div class="container">
+        <h2 class="contacts-section-title section-title">
+          Contacts
+        </h2>
+        <div class="contacts-section-content-wrapper">
+          <address class="contacts-info">
+            3100 Tucker Rd, Fort Washington, USA <br/>
+            <a href="tel:+380960000007">+13012481660</a>
+            <a href="mailto:info@hotmail.com">info@hotmail.com</a>  
+          </address>
+          <form name="registration_form" action="#" class="contacts-section-form popup-form">
+            <h2 class="popup-form-title">
+              Request call
+            </h2>
+            <div class="form-inputs-wrapper flex-container">
+              <label for="username-surname" class="visually-hidden">Your name and surname</label>
+              <input 
+                    id="username-surname"
+                    name="username-surname"       
+                    type="text"
+                    class="contacts-section-form-input"
+                    placeholder="Your name and surname"
+                    minlength="2"
+                    pattern="^[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]+\s[A-Za-zА-Яа-яёЁЇїІіЄєҐґ]+$"
+                    required>
+              <label for="zip" class="visually-hidden">ZIP Code</label>
+              <input 
+                    id="zip"
+                    name="zip"
+                    type="number"
+                    class="contacts-section-form-input"
+                    placeholder="ZIP Code"
+                    length="5"
+                    required>
+              <label for="tel" class="visually-hidden">Your phone number</label>
+              <input 
+                    id="tel"
+                    name="tel"
+                    type="tel"
+                    class="contacts-section-form-input"
+                    placeholder="Your phone number"
+                    pattern="^\[0-9]"
+                    required>
+              <label for="email" class="visually-hidden">Your email</label>
+              <input 
+                    id="email"
+                    name="email"
+                    class="contacts-section-form-input"
+                    type="email"
+                    placeholder="Your email"
+                    required>
+            </div>
+            <button type="submit" class="btn contacts-section-form-btn popup-form-btn">
+              Submit
+            </button>
+            <p class="contacts-section-form-text popup-form-text">
+              By clicking on the "Request a call" button, I agree to the
+              <a href="./temp-pages/tempPage2.html" class="contacts-section-form-text-link privacy-policy-link">
+                privacy policy
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="./js/index.js" defer></script>
 </body>

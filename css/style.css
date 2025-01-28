@@ -732,17 +732,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 50%;
-  border: solid 1px #012c7b;
-  padding: 4px; */
   color: #012c7b;
-  /* background: #dee4f1; */
   transition: color 0.3s linear;
 }
 
 .btn-slider-next:hover,
 .btn-slider-prev:hover {
-  /* background: #57a4ff; */
   color: #57a4ff;
   transition: color 0.3s linear;
 }
@@ -754,11 +749,53 @@
 /* FINISH our team section */
 
 
+/* START contacts section */
 
+/* CONTACTS FORM*/
+.contacts-section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
 
-/*CONTACTS FORM*/
+.contacts-section-title::after {
+  content: " ";
+  display: flex;
+  width: 96px;
+  height: 2px;
+  background-color: #012c7b;
+  justify-self: center;
+  margin-top: 10px;
+  margin-bottom: 42px;
+}
+
+.contacts-section-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.contacts-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 10px;
+  color: #012c7b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.contacts-info a {
+  color: #012c7b;
+}
+
 .contacts-section-form {
   background-color: #dee4f1;
+  padding: 30px 20px;
+  border-radius: 20px;
+  display: grid;
+  justify-items: center;
 }
 
 .contacts-section-form-input {
@@ -777,6 +814,8 @@
 .contacts-section-form-input::placeholder {
   color: #012c7b;
 }
+
+/* FINISH contacts section */
 
 @media (min-width: 425px) {
   .about-us-section {
@@ -876,6 +915,17 @@
   .special-offers-section-content-wrapper {
     gap: 16px;
   }
+
+  .contacts-section-content-wrapper {
+    border: solid 1px #012c7b;
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(297deg, rgba(130,168,251,0.5411414565826331) 21%, rgba(222,228,241,1) 100%);
+  }
+
+  .contacts-info {
+    align-content: center;
+  }
 }
 
 @media (min-width: 992px) {
@@ -922,7 +972,6 @@
   .slider-buttons-wrapper {
     display: none;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -1008,12 +1057,6 @@
   .about-us-section-img-visibility-wrapper._show {
     right: 50px;
   }
-
-
-
-
-
-
 
   .contacts-section-form-input {
     padding-top: 16px;
@@ -1152,6 +1195,16 @@
     gap: 56px;
     grid-auto-rows: 400px;
   }
+
+  .contacts-section-content-wrapper {
+    padding: 40px;
+    gap: 100px;
+  }
+
+  .contacts-info {
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 
 @media (min-width: 1700px) {
@@ -1207,6 +1260,10 @@
 
   .our-team-section-list {
     gap: 44px;
+  }
+
+  .contacts-section-content-wrapper {
+    grid-template-columns: 1.3fr 1fr;
   }
 }
 
