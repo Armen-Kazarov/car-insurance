@@ -787,6 +787,7 @@
 }
 
 .contacts-info a {
+  text-decoration: underline;
   color: #012c7b;
 }
 
